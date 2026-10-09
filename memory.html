@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories ❤️</title>
+    <link rel="stylesheet" href="memories.css">
+</head>
+
+<body>
+    <main class="memory-page">
+        <h1>♡ Our Memories ♡</h1>
+        <p class="subtitle">15 little moments, one big love, and a special day for you.💕</p>
+
+
+        <div class="memory-slideshow">
+
+            <div class="slideshow">
+                <img src="image/01.jpg" class="slide active" alt="Our Memory 1">
+                <img src="image/02.jpg" class="slide" alt="Our Memory 2">
+                <img src="image/03.jpg" class="slide" alt="Our Memory 3">
+                <img src="image/04.jpg" class="slide" alt="Our Memory 4">
+                <img src="image/05.jpg" class="slide" alt="Our Memory 5">
+                <img src="image/06.jpg" class="slide" alt="Our Memory 6">
+                <img src="image/07.jpg" class="slide" alt="Our Memory 7">
+                <img src="image/08.jpg" class="slide" alt="Our Memory 8">
+                <img src="image/09.jpg" class="slide" alt="Our Memory 9">
+                <img src="image/10.jpg" class="slide" alt="Our Memory 10">
+                <img src="image/11.jpg" class="slide" alt="Our Memory 11">
+                <img src="image/12.jpg" class="slide" alt="Our Memory 12">
+                <img src="image/13.jpg" class="slide" alt="Our Memory 13">
+                <img src="image/14.jpg" class="slide" alt="Our Memory 14">
+                <img src="image/15.jpg" class="slide" alt="Our Memory 15">
+            </div>
+
+            <div class="memory-caption">
+                <h3 id="memoryTitle"><b>♡ Happy Birthday, My Love ♡</b></h3><br>
+                <p id="memoryText">
+                    Today is your special day, my love. I hope it brings you as mush happiness as you bring into my life.🎂❤️
+                </p>
+            </div>
+
+        </div>
+        <a href="letter.html" class="back-button">
+            💌 Read My Birthday Letter
+        </a>
+        <a href="gift.html" class="back-button">
+            🎁Open Your Birthday Gift
+        </a>
+    </main>
+    <div class="music player">
+        <audio id="bgMusic" loop>
+            <source src="music/Love Music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicBtn" type="button" style="position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: block;
+            padding: 14px 20px;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;">
+            🎵Play Our Love Song
+        </button>
+    </div>
+    <script src="music.js"></script>
+
+    <script>
+        const slides = document.querySelectorAll(".slideshow .slide");
+        const memoryTitle = document.getElementById("memoryTitle");
+        const memoryText = document.getElementById("memoryText");
+
+        const memories = [
+            {
+                title: "Happy Birthday, My Love 🎂",
+                text: "Today is your special day, and I wish I could fill it with all the happiness you bring into my life."
+            },
+            {
+                title: "My Favorite Person ❤️",
+                text: "Out of all the people in this world, you will always be the one closest to my heart."
+            },
+            {
+                title: "Your Beautiful Smile 🥰",
+                text: "Your smile is my favorite sight, and seeing you happy is one of my biggest wishes."
+            },
+            {
+                title: "You Make My World Brighter 💗",
+                text: "Even an ordinary day feels special when I have you by my side."
+            },
+            {
+                title: "My Sweetest Love 💕",
+                text: "If I could give you one gift today, it would be the ability to see how precious you are to me."
+            },
+            {
+                title: "My Birthday Wish for You 🌷",
+                text: "May your life be filled with good health, endless happiness, success, and beautiful surprises."
+            },
+            {
+                title: "Never Stop Dreaming ✨",
+                text: "I believe in you and your dreams. I hope you achieve every beautiful thing your heart desires."
+            },
+            {
+                title: "Thank You for Being You 💖",
+                text: "You don't have to be perfect to be special. You are already wonderful just the way you are."
+            },
+            {
+                title: "My Safe Place 🫶",
+                text: "Your love gives my heart comfort, and being with you makes me feel at home."
+            },
+            {
+                title: "More Memories Together 📸",
+                text: "This is just one chapter of our story. I hope we make countless beautiful memories together."
+            },
+            {
+                title: "You Deserve the Best 🎁",
+                text: "I wish I could give you every wonderful thing in the world, because you deserve so much happiness."
+            },
+            {
+                title: "I'll Always Cheer for You 🌹",
+                text: "Through every challenge and every success, I hope you know that I'll always be rooting for you."
+            },
+            {
+                title: "Today, We Celebrate You 🎉",
+                text: "The world became a little more beautiful on the day you were born, and I'm so glad you exist."
+            },
+            {
+                title: "My Heart Is Yours 💞",
+                text: "No birthday gift could ever explain how much you mean to me. You have a special place in my heart."
+            },
+            {
+                title: "My Forever Birthday Wish 💘",
+                text: "Happy Birthday, my love. May this year bring you beautiful beginnings, and may I share many more birthdays with you."
+            }
+        ];
+        let currentSlide = 0;
+
+        if (slides.length > 0 && memoryTitle && memoryText) {
+            memoryTitle.textContent = memories[0].title;
+            memoryText.textContent = memories[0].text;
+
+            setInterval(() => {
+                slides[currentSlide].classList.remove("active");
+
+                currentSlide = (currentSlide + 1) % slides.length;
+
+                slides[currentSlide].classList.add("active");
+                memoryTitle.textContent = memories[currentSlide].title;
+                memoryText.textContent = memories[currentSlide].text;
+            }, 3000);
+        }
+    </script>
+
+</body>
+
+</html>

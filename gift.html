@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Surprise Gift 🎁</title>
+    <link rel="stylesheet" href="gift.css">
+</head>
+
+<body>
+    <main class="gift-page">
+        <h1>A Special Birthday Suprise for you💗</h1>
+        <p class="subtitle">A little gift filled with all my love, just for you.❤️</p>
+
+        <button class="gift-box" id="giftBox" onclick="openGift()">🎁</button>
+        <p class="tap-text" id="tapText">Tap to open your Birthday gift!🎁</p>
+
+
+        <div class="gift-message" id="giftMessage">
+            <h2>Happy Birthday, My Love! 🎂❤️</h2>
+
+            <p>This little surprise comes straight from my heart. 💌</p>
+
+            <p>It may be a small gift, but it's filled with
+                all my love, hugs, and kisses. 💖</p>
+
+            <p>On your special day, I wish you endless happiness,
+                good health, and success in everything you do. 🌷</p>
+
+            <p>Never forget how special you are to me.
+                I'll always be cheering for you and your dreams. 💕</p>
+
+            <p>Thank you for being part of my life.
+                You make my world brighter just by being in it. ✨</p>
+
+            <p>I apologize for not being able to be with you today. 😔</p>
+
+            <p class="love-note">
+                Happy Birthday, my favorite person! 🎁<br>
+                I love you today, tomorrow, and always. 💗
+            </p>
+
+            <a href="memories.html" class="gift-button">
+                Back to Our Memories 📸
+            </a>
+        </div>
+        <a href="index.html" class="home-button">Back to Home🏠</a>
+    </main>
+    <div class="music player">
+        <audio id="bgMusic" loop>
+            <source src="music/Love Music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicBtn" type="button" style="position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: block;
+            padding: 14px 20px;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;">
+            🎵Play Our Love Song
+        </button>
+    </div>
+
+    <script>
+        document.getElementById("giftBox").addEventListener("click", function () {
+            const giftMessage = document.getElementById("giftMessage");
+            const tapText = document.getElementById("tapText");
+
+            giftMessage.style.display = "block";
+            tapText.textContent = "Happy Birthday, my love! 🎂❤️";
+            this.textContent = "💘";
+
+            // Floating hearts
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement("span");
+                heart.className = "floating-heart";
+                heart.textContent = ["❤️", "💓", "💕", "💗", "💖", "💝", "💞"][
+                    Math.floor(Math.random() * 5)
+                ];
+
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDelay = Math.random() * 1.5 + "s";
+                heart.style.fontSize = (20 + Math.random() * 20) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4500);
+            }
+        });
+    </script>
+    <script src="music.js"></script>
+</body>
+
+</html>

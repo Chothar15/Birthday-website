@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="welcome">
+        <div class="heart">❤️</div>
+        <p class="small-text">A SPECIAL BIRTHDAY SUPRISE FOR YOU</p>
+        <h1>Happy Birthday, My<span>Love 🎂</span></h1>
+        <p class="message">Today is all about you, my favorite person.💗
+        </p>
+        <button onclick="location.href='Letter.html'">Open Your Birthday Suprisr 💌</button>
+        <p class="footer">I've made something special just for you...♡</p>
+    </div>
+    <div class="music player">
+        <audio id="bgMusic" loop>
+            <source src="music/Love Music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicBtn" type="button" style="position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: block;
+            padding: 14px 20px;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;">
+                🎵Play Our Love Song
+        </button>
+    </div>
+    <script>
+        const bgMusic = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
+
+        musicBtn.addEventListener("click", async function () {
+            if (bgMusic.paused) {
+                try {
+                    await bgMusic.play();
+                    musicBtn.textContent = "⏸️ Pause Our Love Song";
+                } catch (error) {
+                    musicBtn.textContent = "Music couldn't play — check the file";
+                }
+            } else {
+                bgMusic.pause();
+                musicBtn.textContent = "🎵 Play Our Love Song";
+            }
+        });
+    </script>
+    <script>
+        function startStory() {
+            alert("Our love story begins here! ❤️")
+        }
+    </script>
+    <script src="music.js"></script>
+</body>
+
+</html>

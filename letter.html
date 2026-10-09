@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter for You 💌</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="letter.css">
+
+</head>
+
+<body>
+    <div class="welcome">
+        <div class="heart">💌</div>
+        <p class="small-text">A LETTER FROM MY HEART</p>
+        <h1>Hay, My <span>Love</span></h1>
+        <p class="message">I have something special to tell you...<br>
+            Will you open my little letter? ❤️
+        </p>
+        <button id="openLetter">Open My Letter 💗</button>
+
+        <div id="loveLetter" hidden>
+            <hr>
+            <p class="letter-content" id="typingText"></p>
+
+            <div class="heart"> ❤️</div>
+            <button onclick="location.href='Index.html'">Back to Our Beginning 💗</button>
+            <a href="memory.html" class="memories-button">
+                See Our Memories📸
+            </a>
+        </div>
+    </div>
+    <div class="music player">
+        <audio id="bgMusic" loop>
+            <source src="music/Love Music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicBtn" type="button" style="position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: block;
+            padding: 14px 20px;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;">
+            🎵Play Our Love Song
+        </button>
+    </div>
+
+    <script>
+       
+const loveMessage = `My Birthday Letter 💌
+
+To my favorite person, ❤️
+
+Happy Birthday, my love! 🎂💗
+
+Today is a very special day because
+the world was blessed with someone
+as wonderful as you.
+
+You bring so much happiness into my life.
+Your smile makes my darkest days brighter,
+and your love makes my heart feel at home.
+
+I may not always find the perfect words
+to express how much you mean to me,
+but I hope you always remember
+how deeply you are loved.
+
+On your birthday, I wish you
+endless happiness, good health,
+success in everything you do,
+and all the beautiful things you deserve.
+
+I hope all your dreams come true,
+and whenever life gets difficult,
+I hope you remember that
+I'll always be cheering for you.
+
+Thank you for being part of my life.
+If I could give you one thing today,
+it would be the ability to see yourself
+through my eyes and know how special you are.
+
+Happy Birthday again, my love! 🎁
+
+I love you more than words can say. ❤️
+
+Forever yours. 💌`;
+
+        const typingText = document.getElementById("typingText");
+        const openButton = document.getElementById("openLetter");
+        const loveLetter = document.getElementById("loveLetter");
+
+        let letterIndex = 0;
+        let typingTimer;
+
+        function typeLoveLetter() {
+            if (letterIndex < loveMessage.length) {
+                typingText.textContent += loveMessage.charAt(letterIndex);
+                letterIndex++;
+                typingTimer = setTimeout(typeLoveLetter, 45);
+            }
+        }
+
+        openButton.addEventListener("click", function () {
+            loveLetter.hidden = false;
+            openButton.hidden = true;
+
+            typingText.textContent = "";
+            letterIndex = 0;
+
+            clearTimeout(typingTimer);
+            typeLoveLetter();
+        });
+    </script>
+    <script src="music.js"></script>
+</body>
+
+</html>

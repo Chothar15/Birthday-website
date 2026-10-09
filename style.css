@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffd6e3,
+        #ffe4ec,
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     font-family: Georgia,serif;
+     color: #7a1838;
+}
+
+.welcome{
+    width: 90%;
+    max-width: 650px;
+    padding: 45px 25px;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+
+    background: rhba(255, 255, 255, 0.45);
+    box-shadow: 0 15px 50px rgba(190, 40, 90, 0.12);
+    animation: appear 1.2s ease;
+}
+
+.heart{
+    font-size: 75px;
+    margin-bottom: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.small-text{
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #d63362;
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: clamp(45px, 9vw, 75px);
+    margin-bottom: 25px;
+}
+
+h1 span{
+    display: block;
+    color: #e63964;
+    font-style: italic;
+}
+
+.message{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 2;
+    color: #87445c;
+    margin-bottom: 30px;
+}
+
+button{
+    padding: 16px 30px;
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff7096,
+        #d91e52
+    );
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(217,30,82,0.25);
+    transition: 0.3s;
+}
+
+button :hover{
+    transform: translateY(-4px) scale(1.03s);
+    box-shadow: 0 12px 25px rgba(217,30,82,0.35);
+}
+
+.footer{
+    margin-top: 35px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #b15c79;
+}
+
+@keyframes heartbeat{
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.15);
+    }
+}
+
+@keyframes appear{
+    form{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 480px){
+    .welcome{
+        padding: 35px 18px;
+    }
+    .heart{
+        font-size: 60px;
+    }
+    .small-text{
+        letter-spacing: 2px;
+    }
+}
+.memories-button {
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ff6b9d, #e75480);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(231, 84, 128, 0.3);
+    transition: all 0.3s ease;
+}
+
+.memories-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(231, 84, 128, 0.4);
+}
+
+/* Romantic Website Background */
+body {
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffe0eb,
+        #fff5f7
+    );
+    background-attachment: fixed;
+}
+
+/* Romantic Headings */
+h1,
+h2 {
+    color: #c75b7a;
+    text-shadow: 0 2px 8px rgba(199, 91, 122, 0.15);
+}
+
+/* Soft Romantic Buttons */
+button,
+.btn {
+    background: linear-gradient(
+        135deg,
+        #e88da8,
+        #c75b7a
+    );
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    box-shadow: 0 5px 15px rgba(199, 91, 122, 0.25);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(199, 91, 122, 0.35);
+}
